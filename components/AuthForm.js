@@ -3,17 +3,16 @@ const AuthForm = (params) => {
   const enteredEmail = useRef();
   const enteredPass = useRef();
   const [isLogin, setIsLogin] = useState(false);
-
   const submitHandler = async (e) => {
     e.preventDefault();
     const email = enteredEmail.current.value;
-    const passwd = enteredPass.current.value;
+    const password = enteredPass.current.value;
     const response = await fetch("/api/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email: email, password: passwd, isLogin }),
+      body: JSON.stringify({ email, password, isLogin }),
     });
     const data = await response.json();
     console.log(data);

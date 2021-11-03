@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  background-color: aquamarine;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbarItems {
+  display: flex;
+}
+.navbarItem {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
