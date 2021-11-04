@@ -1,6 +1,8 @@
 import { useState, useRef, useContext } from "react";
 import Style from "./AuthForm.module.css";
+import AuthContext from "../../contexts/auth-context";
 const AuthForm = (params) => {
+  const AuthCtx = useContext(AuthContext);
   const enteredEmail = useRef();
   const enteredPass = useRef();
   const [isLogin, setIsLogin] = useState(false);
@@ -16,7 +18,7 @@ const AuthForm = (params) => {
       body: JSON.stringify({ email, password, isLogin }),
     });
     const data = await response.json();
-    console.log(data);
+    AuthCtx.login(data.idToken);
   };
 
   return (

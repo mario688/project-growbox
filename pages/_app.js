@@ -1,10 +1,13 @@
 import LayoutCard from "../components/layout/LayoutCard";
 import "../styles/globals.css";
+import { AuthContextProvider } from "../contexts/auth-context";
 function MyApp({ Component, pageProps }) {
   return (
-    <LayoutCard>
-      <Component {...pageProps} />
-    </LayoutCard>
+    <AuthContextProvider>
+      <LayoutCard>
+        <Component {...pageProps} />
+      </LayoutCard>
+    </AuthContextProvider>
   );
 }
 
