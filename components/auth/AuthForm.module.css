@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding-top: 2rem;
+  background-color: rgb(255, 255, 255);
+  width: 30%;
+  height: 30rem;
+  margin: 0 auto;
+  flex-direction: column;
+  font-size: larger;
+}
+.form input {
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: larger;
+  outline: none;
+}
+
+.form input,
+.form button {
+  margin: 1rem auto;
+  display: inline-block;
+  width: 80%;
+}
+.form button {
+  width: 40%;
+  border: none;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: aquamarine;
+}

@@ -1,4 +1,5 @@
 import { useState, useRef, useContext } from "react";
+import Style from "./AuthForm.module.css";
 const AuthForm = (params) => {
   const enteredEmail = useRef();
   const enteredPass = useRef();
@@ -20,19 +21,21 @@ const AuthForm = (params) => {
 
   return (
     <>
-      <button
-        onClick={() => {
-          setIsLogin((prevState) => !prevState);
-        }}
-      >
-        {isLogin ? "Sing in" : "Sing up"}
-      </button>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className={Style.form}>
+        <h1>{isLogin ? "Login" : "Sing up"}</h1>
         <label>Email</label>
-        <input type="text" ref={enteredEmail} />
+        <input type="email" ref={enteredEmail} />
         <label>Haslo</label>
-        <input type="text" ref={enteredPass} />
+        <input type="password" ref={enteredPass} />
         <button type="submit">Login</button>
+        <button
+          type="button"
+          onClick={() => {
+            setIsLogin((prevState) => !prevState);
+          }}
+        >
+          {!isLogin ? "Sing in" : "Sing up"}
+        </button>
       </form>
     </>
   );
