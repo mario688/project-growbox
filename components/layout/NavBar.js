@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Style from "./NavBar.module.css";
+import AuthContext from "../../contexts/auth-context";
 export default function NavBar() {
+  const AuthCtx = useContext(AuthContext);
+  const { isLoggedIn } = AuthCtx;
   return (
     <div className={Style.navbar}>
       <div className={Style.navbarItem}>
@@ -9,9 +12,16 @@ export default function NavBar() {
       </div>
       <nav className={Style.navbarItems}>
         <ul>
-          <li className={Style.navbarItem}>
-            <Link href="/auth">Login</Link>
-          </li>
+          {!isLoggedIn ? (
+            <li className={Style.navbarItem}>
+              <Link href="/auth">Login</Link>
+            </li>
+          ) : (
+            <li className={Style.navbarItem}>
+              <Link href="/account">Account</Link>
+            </li>
+          )}
+
           <li className={Style.navbarItem}>
             <Link href="/">About</Link>
           </li>

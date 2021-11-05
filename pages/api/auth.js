@@ -7,6 +7,7 @@ async function handler(req, res) {
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDx-IYFzvwekuBFA_c49YsjHRTQ6wCZaVM")
     : (url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDx-IYFzvwekuBFA_c49YsjHRTQ6wCZaVM");
+
   const response = await fetch(url, {
     method: "POST",
     headers: {
