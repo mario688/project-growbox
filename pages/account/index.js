@@ -1,4 +1,6 @@
+import Account from "../../components/account/Account";
+
 const accountPage = (params) => {
-  return <h1>Account</h1>;
+  return <Account />;
 };
 export default accountPage;
