@@ -5,17 +5,17 @@ import { useRouter } from "next/router";
 export default function Account() {
   const route = useRouter();
   const AuthCtx = useContext(AuthContext);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({ email: "" });
   const fetchUserData = async (params) => {
     const response = await fetch(`/api/user?token=${AuthCtx.token}`);
     const responseJson = await response.json();
     const userData = responseJson.users[0];
-    setUser(userData);
+    setUser({ email: userData.email });
   };
   useEffect(() => {
     fetchUserData();
   }, []);
-  console.log(user);
+
   return (
     <>
       <h1>Account</h1>

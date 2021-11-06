@@ -21,7 +21,10 @@ const AuthForm = (params) => {
     });
     const data = await response.json();
     if (!data.error) {
-      AuthCtx.login(data.idToken);
+      const expirationTime = new Date(
+        new Date().getTime() + +data.expiresIn * 1000
+      );
+      AuthCtx.login(data.idToken, expirationTime);
       router.replace("/");
     } else {
       console.log(data.error.message);
