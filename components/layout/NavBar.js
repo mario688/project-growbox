@@ -12,11 +12,17 @@ export default function NavBar() {
       </div>
       <nav className={Style.navbarItems}>
         <ul>
-          {!isLoggedIn ? (
+          {!isLoggedIn && (
             <li className={Style.navbarItem}>
               <Link href="/auth">Login</Link>
             </li>
-          ) : (
+          )}
+          {isLoggedIn && (
+            <li className={Style.navbarItem}>
+              <Link href="/device">Device</Link>
+            </li>
+          )}
+          {isLoggedIn && (
             <li className={Style.navbarItem}>
               <Link href="/account">Account</Link>
             </li>

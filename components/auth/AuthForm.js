@@ -7,7 +7,7 @@ const AuthForm = (params) => {
   const AuthCtx = useContext(AuthContext);
   const enteredEmail = useRef();
   const enteredPass = useRef();
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const submitHandler = async (e) => {
     e.preventDefault();
     const email = enteredEmail.current.value;
