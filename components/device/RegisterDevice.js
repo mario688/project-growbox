@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 
-import useUser from "../hooks/fetchUser-hook";
-import { useRef } from "react";
-export default function RegisterDevice() {
+export default function RegisterDevice(data) {
   const idDeviceRef = useRef();
-  const { userId } = useUser();
-
+  const userId = data.userId;
   const registerDeviceHandler = async (e) => {
     const idDevice = idDeviceRef.current.value;
     e.preventDefault();
-    await fetch(`/api/device?userId=${userId}&idDevice=${idDevice}`);
+    await fetch(`/api/register-device?userId=${userId}&idDevice=${idDevice}`);
   };
 
   return (

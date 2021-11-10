@@ -21,7 +21,7 @@ const handler = async (req, res) => {
     );
   };
   registerDevice();
-
+  console.log(req.query);
   res.status(200).json("OK");
 };
 export default handler;

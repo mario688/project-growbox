@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import useUser from "../hooks/fetchUser-hook";
 import { useRouter } from "next/router";
+import AuthContext from "../../contexts/auth-context";
 export default function Account() {
+  const AuthCtx = useContext(AuthContext);
   const route = useRouter();
   const { email } = useUser();
 
