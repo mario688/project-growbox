@@ -8,6 +8,7 @@ const AuthForm = (params) => {
   const enteredEmail = useRef();
   const enteredPass = useRef();
   const [isLogin, setIsLogin] = useState(true);
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const email = enteredEmail.current.value;
@@ -38,7 +39,7 @@ const AuthForm = (params) => {
         <input type="email" ref={enteredEmail} />
         <label>Haslo</label>
         <input type="password" ref={enteredPass} />
-        <button type="submit">Login</button>
+        <button type="submit">{isLogin ? "Login" : "Create Account"}</button>
         <button
           type="button"
           onClick={() => {
