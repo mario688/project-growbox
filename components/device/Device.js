@@ -9,7 +9,6 @@ export default function Device() {
   return (
     <div className={Style.container}>
       <h1>Your Device</h1>
-
       {isLoading && <div className={Style.loadingSpinner}></div>}
       {userId && <FetchDevice userId={userId} />}
       {!userId && !isLoading && <RegisterDevice userId={userId} />}

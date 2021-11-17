@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import { useRouter } from "next/router";
 let logoutTimer;
 const AuthContext = React.createContext({
   token: "",
@@ -28,6 +29,7 @@ const checkStoredToken = (params) => {
 
 export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(null);
+  const route = useRouter();
   let initialToken;
   let tokenData;
   if (typeof window !== "undefined") {
@@ -43,6 +45,7 @@ export const AuthContextProvider = (props) => {
   const userIsLoggedIn = !!token;
 
   const logoutHandler = useCallback(() => {
+    route.replace("/");
     setToken(null);
     localStorage.removeItem("auth");
     localStorage.removeItem("expirationTime");
