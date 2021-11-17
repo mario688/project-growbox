@@ -2,15 +2,17 @@ import React from "react";
 import RegisterDevice from "./RegisterDevice";
 import useUser from "../hooks/fetchUser-hook";
 import FetchDevice from "./FetchDevice";
-
+import Style from "./Device.module.css";
 export default function Device() {
-  const user = useUser();
+  const { isLoading, userId } = useUser();
 
   return (
-    <div>
+    <div className={Style.container}>
       <h1>Your Device</h1>
-      {user.userId && <FetchDevice userId={user.userId} />}
-      {!user.userId && <RegisterDevice userId={user.userId} />}
+
+      {isLoading && <div className={Style.loadingSpinner}></div>}
+      {userId && <FetchDevice userId={userId} />}
+      {!userId && !isLoading && <RegisterDevice userId={userId} />}
     </div>
   );
 }
