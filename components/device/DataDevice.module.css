@@ -27,6 +27,9 @@
 .water {
   background-image: url(../../public/waterHeight.png);
 }
+.soil {
+  background-image: url(../../public/soil.png);
+}
 .value {
   font-size: xx-large;
   text-align: right;

@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "./DataDevice.module.css";
 export default function dataDevice({ data }) {
-  const { temp, hum, water } = data;
+  const { temp, hum, water, soil } = data;
 
   return (
     <div className={Style.flexContainer}>
@@ -15,6 +15,12 @@ export default function dataDevice({ data }) {
         <div className={Style.title}>Humiditi</div>
         <div className={`${Style.item} ${Style.hum}`}>
           <div className={Style.value}>{hum}</div>
+        </div>
+      </div>
+      <div className={Style.flexItem}>
+        <div className={Style.title}>soil Moisture</div>
+        <div className={`${Style.item} ${Style.soil}`}>
+          <div className={Style.value}>{soil}</div>
         </div>
       </div>
       <div className={Style.flexItem}>
