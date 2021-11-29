@@ -30,6 +30,15 @@
 .soil {
   background-image: url(../../public/soil.png);
 }
+.lux {
+  background-image: url(../../public/sun.png);
+}
+.eco2 {
+  background-image: url(../../public/co2.png);
+}
+.etvoc {
+  background-image: url(../../public/tvoc.png);
+}
 .value {
   font-size: xx-large;
   text-align: right;
