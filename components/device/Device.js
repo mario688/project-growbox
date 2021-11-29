@@ -11,7 +11,6 @@ export default function Device() {
       <h1>Your Device</h1>
       {isLoading && <div className={Style.loadingSpinner}></div>}
       {userId && <FetchDevice userId={userId} />}
-      {!userId && !isLoading && <RegisterDevice userId={userId} />}
     </div>
   );
 }

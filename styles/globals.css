@@ -15,3 +15,26 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input {
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: larger;
+  outline: none;
+}
+
+input,
+button {
+  margin: 1rem auto;
+  display: inline-block;
+  width: 80%;
+}
+button {
+  width: 40%;
+  border: none;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: aquamarine;
+}

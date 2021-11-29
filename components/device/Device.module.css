@@ -1,5 +1,6 @@
 .container {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
 }
 .loadingSpinner {
   width: 8rem;

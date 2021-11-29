@@ -1,27 +1,27 @@
 const handler = async (req, res) => {
   const { userId, idDevice } = req.query;
-  const sendData = async (url, payload) => {
-    const response = await fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-    const responseJson = await response.json();
-  };
-  const registerDevice = async (params) => {
-    const resp1 = await sendData(
+
+  try {
+    const resp1 = await fetch(
       `https://sturdy-dragon-299320-default-rtdb.firebaseio.com/users/${userId}.json`,
-      { device: idDevice }
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ device: idDevice }),
+      }
     );
-    const resp2 = await sendData(
-      `https://sturdy-dragon-299320-default-rtdb.firebaseio.com/devices/${idDevice}.json`,
-      { owner: userId }
-    );
-  };
-  registerDevice();
-  console.log(req.query);
-  res.status(200).json("OK");
+    const response = await resp1.json();
+    if (resp1.ok) {
+      console.log("ok");
+      res.status(200).json("registered");
+    } else {
+      console.log(response);
+      throw new Error(response.error);
+    }
+  } catch (e) {
+    res.status(400).json(e);
+  }
 };
 export default handler;

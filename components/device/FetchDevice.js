@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import useDevice from "../hooks/fetchUsersDeviceId-hook";
 import DataDevice from "./DataDevice";
+import RegisterDevice from "./RegisterDevice";
+import Style from "./FetchDevice.module.css";
 const FetchDevice = (data) => {
   const { idDevice, isLoading } = useDevice(data.userId);
 
@@ -25,7 +27,16 @@ const FetchDevice = (data) => {
   return (
     <>
       {idDevice && <DataDevice data={deviceData} />}
-      {!idDevice && !isLoading && <h1>not found device for your account </h1>}
+      {!idDevice && !isLoading && (
+        <div className={Style.registerContainer}>
+          <div>
+            <h1>not found device for your account </h1>
+          </div>
+          <div>
+            <RegisterDevice userId={data.userId} />
+          </div>
+        </div>
+      )}
     </>
   );
 };
