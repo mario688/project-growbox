@@ -19,25 +19,25 @@
   background-size: 6rem;
 }
 .temp {
-  background-image: url(../../public/temp.png);
+  background-image: url(../../src/temp.png);
 }
 .hum {
-  background-image: url(../../public/hum.png);
+  background-image: url(../../src/hum.png);
 }
 .water {
-  background-image: url(../../public/waterHeight.png);
+  background-image: url(../../src/waterHeight.png);
 }
 .soil {
-  background-image: url(../../public/soil.png);
+  background-image: url(../../src/soil.png);
 }
 .lux {
-  background-image: url(../../public/sun.png);
+  background-image: url(../../src/sun.png);
 }
 .eco2 {
-  background-image: url(../../public/co2.png);
+  background-image: url(../../src/co2.png);
 }
 .etvoc {
-  background-image: url(../../public/tvoc.png);
+  background-image: url(../../src/tvoc.png);
 }
 .value {
   font-size: xx-large;
