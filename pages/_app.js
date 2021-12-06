@@ -1,13 +1,19 @@
 import LayoutCard from "../components/layout/LayoutCard";
 import "../styles/globals.css";
+import Head from "next/head";
 import { AuthContextProvider } from "../contexts/auth-context";
 function MyApp({ Component, pageProps }) {
   return (
-    <AuthContextProvider>
-      <LayoutCard>
-        <Component {...pageProps} />
-      </LayoutCard>
-    </AuthContextProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <AuthContextProvider>
+        <LayoutCard>
+          <Component {...pageProps} />
+        </LayoutCard>
+      </AuthContextProvider>
+    </>
   );
 }
 

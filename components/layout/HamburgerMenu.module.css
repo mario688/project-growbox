@@ -1,0 +1,36 @@
+.backDrop {
+  width: 200vw;
+  height: 300vh;
+  z-index: 200;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.472);
+}
+.menuContainer {
+  border-radius: 2px;
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgb(255, 255, 255);
+}
+.menuContainerItems {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  list-style: none;
+
+  height: 100%;
+}
+.menuContainerItem {
+  margin: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  background-color: cadetblue;
+  width: 10rem;
+  height: 2rem;
+}

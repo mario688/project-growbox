@@ -33,7 +33,7 @@ export default function HomePage() {
           <video
             src="./scene.mp4"
             width="640"
-            height="100%"
+            height="480"
             loop
             autoPlay
             muted

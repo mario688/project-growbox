@@ -1,38 +1,49 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import Style from "./NavBar.module.css";
 import AuthContext from "../../contexts/auth-context";
+import HamburgerMenu from "./HamburgerMenu";
 export default function NavBar() {
   const AuthCtx = useContext(AuthContext);
   const { isLoggedIn } = AuthCtx;
-  return (
-    <div className={Style.navbar}>
-      <div className={Style.navbarItem}>
-        <Link href="/">Home</Link>
-      </div>
-      <nav className={Style.navbarItems}>
-        <ul>
-          {!isLoggedIn && (
-            <li className={Style.navbarItem}>
-              <Link href="/auth">Login</Link>
-            </li>
-          )}
-          {isLoggedIn && (
-            <li className={Style.navbarItem}>
-              <Link href="/device">Device</Link>
-            </li>
-          )}
-          {isLoggedIn && (
-            <li className={Style.navbarItem}>
-              <Link href="/account">Account</Link>
-            </li>
-          )}
+  const [showMenu, setShowMenu] = useState(false);
+  const hamburgerHandler = (params) => {
+    setShowMenu((prev) => !prev);
+  };
 
-          <li className={Style.navbarItem}>
-            <Link href="/">About</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  return (
+    <>
+      {showMenu && <HamburgerMenu onHamburgerhandler={hamburgerHandler} />}
+      <div className={Style.navbar}>
+        <div onClick={hamburgerHandler} className={Style.hamburgerIcon}></div>
+        <div className={Style.homeButton}>
+          <Link href="/">Home</Link>
+        </div>
+
+        <nav className={Style.navbarItems}>
+          <ul>
+            {!isLoggedIn && (
+              <li className={Style.navbarItem}>
+                <Link href="/auth">Login</Link>
+              </li>
+            )}
+            {isLoggedIn && (
+              <li className={Style.navbarItem}>
+                <Link href="/device">Device</Link>
+              </li>
+            )}
+            {isLoggedIn && (
+              <li className={Style.navbarItem}>
+                <Link href="/account">Account</Link>
+              </li>
+            )}
+
+            <li className={Style.navbarItem}>
+              <Link href="/">About</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </>
   );
 }
