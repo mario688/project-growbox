@@ -1,0 +1,19 @@
+.accountContainer {
+  height: 95%;
+  background-image: url(../../src/background.jpg);
+  background-repeat: repeat-x;
+  background-position: 0% 100%;
+  background-attachment: fixed;
+}
+
+.account {
+  background-color: rgba(203, 248, 213, 0.493);
+}
+.userProfile {
+  background-image: url(../../src/userProfile.png);
+  background-size: contain;
+  border-radius: 1rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: rgba(12, 145, 41, 0.233);
+}

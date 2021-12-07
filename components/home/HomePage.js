@@ -33,14 +33,14 @@ export default function HomePage() {
           <video
             src="./scene.mp4"
             width="640"
-            height="480"
+            height="100%"
             loop
             autoPlay
             muted
           ></video>
         </div>
         <div className={Style.videoText}>
-          <h1 className>amazing convenience</h1>
+          <h1>amazing convenience</h1>
           <h2>
             A home device for growing any type of plant, now you do not have to
             worry that you will not meet the requirements of the plant.
