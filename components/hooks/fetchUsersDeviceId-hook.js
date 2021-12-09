@@ -7,8 +7,12 @@ const useDevice = (user) => {
       const response = await fetch(`api/fetch-deviceId?userId=${user}`);
 
       const dataJson = await response.json();
+      if (dataJson.device) {
+        setDeviceId(dataJson.device.id);
+      } else {
+        setDeviceId(false);
+      }
 
-      setDeviceId(dataJson.device);
       setIsloading(false);
     },
     [user]

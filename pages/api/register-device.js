@@ -3,13 +3,13 @@ const handler = async (req, res) => {
 
   try {
     const resp1 = await fetch(
-      `https://sturdy-dragon-299320-default-rtdb.firebaseio.com/users/${userId}.json`,
+      `https://sturdy-dragon-299320-default-rtdb.firebaseio.com/users/${userId}/device.json`,
       {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ device: idDevice }),
+        body: JSON.stringify({ id: idDevice }),
       }
     );
     const response = await resp1.json();

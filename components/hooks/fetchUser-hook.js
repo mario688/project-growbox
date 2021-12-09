@@ -3,7 +3,7 @@ import AuthContext from "../../contexts/auth-context";
 import { useEffect, useState } from "react";
 const useUser = () => {
   const AuthCtx = useContext(AuthContext);
-  const [user, setUser] = useState({ email: "" });
+  const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchUserData = useCallback(
@@ -18,10 +18,11 @@ const useUser = () => {
     },
     [AuthCtx.token]
   );
+
   useEffect(() => {
     fetchUserData();
   }, [fetchUserData]);
 
-  return { email: user.email, userId: user.userId, isLoading };
+  return user;
 };
 export default useUser;

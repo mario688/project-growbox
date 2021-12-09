@@ -13,7 +13,9 @@ const FetchDevice = (data) => {
         `/api/fetch-DataDevice?deviceId=${idDevice}`
       );
       const responseJson = await response.json();
+
       const { temp, hum, lux, soil, water, etvoc, eco2 } = responseJson;
+
       setDeviceData({ temp, hum, lux, soil, water, eco2, etvoc });
     },
     [idDevice]
@@ -24,7 +26,7 @@ const FetchDevice = (data) => {
       fetchData();
     }
   }, [idDevice, fetchData]);
-  console.log(deviceData);
+
   return (
     <>
       {idDevice && <DataDevice data={deviceData} />}
