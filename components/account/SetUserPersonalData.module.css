@@ -1,0 +1,18 @@
+.editData {
+  background-color: rgb(147, 192, 177);
+  width: 60vw;
+  position: fixed;
+  left: 20vw;
+  top: 20%;
+  z-index: 300;
+  text-align: center;
+}
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.514);
+}

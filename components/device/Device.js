@@ -1,16 +1,16 @@
-import React from "react";
-import RegisterDevice from "./RegisterDevice";
-import useUser from "../hooks/fetchUser-hook";
+import React, { useContext } from "react";
 import FetchDevice from "./FetchDevice";
 import Style from "./Device.module.css";
+import AuthContext from "../../contexts/auth-context";
+import LoadingSpinner from "../layout/LoadingSpinner";
 export default function Device() {
-  const { isLoading, userId } = useUser();
+  const userCtx = useContext(AuthContext);
+  const userId = userCtx.user.userId;
 
   return (
     <div className={Style.container}>
       <h1>Your Device</h1>
-      {isLoading && <div className={Style.loadingSpinner}></div>}
-      {userId && <FetchDevice userId={userId} />}
+      <FetchDevice userId={userId} />
     </div>
   );
 }

@@ -1,40 +1,35 @@
-import React, { useState, useEffect } from "react";
-import useUser from "../hooks/fetchUser-hook";
-import { UserMap } from "./mapUser";
+import React, { useContext, useState, useEffect } from "react";
+import AuthContext from "../../contexts/auth-context";
 import Style from "./UserPersonalData.module.css";
-import SetUserPersonalData from "./SetUserPersonalData";
+import useUserData from "../hooks/fetchUserPersonals-hook";
+import LoadingSpinner from "../layout/LoadingSpinner";
 export default function UserPersonalData() {
-  const { userId, email } = useUser();
-  const [user, setUser] = useState({
-    avatar: "",
-    bio: "",
-    email: "",
-    lastname: "",
-    username: "",
-  });
+  const userCtx = useContext(AuthContext);
+  const { email, userId } = userCtx.user;
 
-  const fetchUserData = async (params) => {
-    const response = await fetch(`/api/fetch-deviceId?userId=${userId}`);
-    const responseJson = await response.json();
-    if (responseJson) {
-      const userData = UserMap(responseJson);
-      userData.email = email;
-      setUser(userData);
-    }
-  };
+  const { username, lastname, bio, avatar, isLoading } = useUserData(userId);
 
-  useEffect(() => {
-    fetchUserData();
-  }, [userId]);
   return (
-    <>
+    <div className={Style.userContainer}>
+      {isLoading && <LoadingSpinner />}
+
       <div className={Style.userProfile}>
-        <img src={user.avatar} />
+        <img src={avatar} />
       </div>
-      <div>Name: {user.username}</div>
-      <div>Last Name: {user.lastname}</div>
-      <div>Bio :{user.bio}</div>
-      <div>Email :{user.email}</div>
-    </>
+      <div className={Style.userData}>
+        <span>
+          <h4>Name:</h4> {username}
+        </span>
+        <span>
+          <h4>Last Name:</h4> {lastname}
+        </span>
+        <span>
+          <h4>Bio:</h4> {bio}
+        </span>
+        <span>
+          <h4>Email:</h4> {email}
+        </span>
+      </div>
+    </div>
   );
 }

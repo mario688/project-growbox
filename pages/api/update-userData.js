@@ -5,7 +5,7 @@ const handler = async (req, res) => {
     ...(!!username && { username: username }),
     ...(!!lastname && { lastname: lastname }),
     ...(!!bio && { bio: bio }),
-    ...(!!avatar && { avatar: avatar }),
+    ...(!!avatar && { avatar: avatar[0] }),
     ...(!!username && { username: username }),
   };
 

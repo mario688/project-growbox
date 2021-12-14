@@ -25,7 +25,13 @@ const AuthForm = (params) => {
       const expirationTime = new Date(
         new Date().getTime() + +data.expiresIn * 1000
       );
-      AuthCtx.login(data.idToken, expirationTime);
+
+      AuthCtx.login({
+        expirationTime,
+        token: data.idToken,
+        email: data.email,
+        userId: data.localId,
+      });
       router.replace("/");
     } else {
       console.log(data.error.message);

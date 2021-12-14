@@ -22,6 +22,9 @@ export default function NavBar() {
 
         <nav className={Style.navbarItems}>
           <ul>
+            <li className={Style.navbarItem}>
+              <Link href="/forum">Foto Relation</Link>
+            </li>
             {!isLoggedIn && (
               <li className={Style.navbarItem}>
                 <Link href="/auth">Login</Link>
@@ -37,10 +40,6 @@ export default function NavBar() {
                 <Link href="/account">Account</Link>
               </li>
             )}
-
-            <li className={Style.navbarItem}>
-              <Link href="/">About</Link>
-            </li>
           </ul>
         </nav>
       </div>

@@ -1,28 +1,8 @@
 .container {
   height: 95%;
+
   background-image: url(../../src/background.jpg);
   background-repeat: repeat-x;
   background-position: 0% 100%;
   background-attachment: fixed;
-}
-.loadingSpinner {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
-  border: 1.5rem solid rgb(212, 210, 210);
-  border-top: 1.5rem solid aquamarine;
-  animation: spin 1s linear infinite;
-}
-@media (max-width: 40rem) {
-  .container {
-    background-image: none;
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
