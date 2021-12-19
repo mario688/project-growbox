@@ -1,0 +1,22 @@
+.createPostContainer {
+  width: 90%;
+  position: absolute;
+}
+.createPost {
+  position: fixed;
+  z-index: 200;
+  width: 40rem;
+  margin: 0 auto;
+  background-color: cadetblue;
+  text-align: center;
+}
+
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.514);
+}

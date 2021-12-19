@@ -11,25 +11,29 @@ export default function UserPersonalData() {
 
   return (
     <div className={Style.userContainer}>
-      {isLoading && <LoadingSpinner />}
-
-      <div className={Style.userProfile}>
-        <img src={avatar} />
-      </div>
-      <div className={Style.userData}>
-        <span>
-          <h4>Name:</h4> {username}
-        </span>
-        <span>
-          <h4>Last Name:</h4> {lastname}
-        </span>
-        <span>
-          <h4>Bio:</h4> {bio}
-        </span>
-        <span>
-          <h4>Email:</h4> {email}
-        </span>
-      </div>
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <>
+          <div className={Style.userProfile}>
+            <img src={avatar} />
+          </div>
+          <div className={Style.userData}>
+            <span>
+              <h4>Name:</h4> {username}
+            </span>
+            <span>
+              <h4>Last Name:</h4> {lastname}
+            </span>
+            <span>
+              <h4>Bio:</h4> {bio}
+            </span>
+            <span>
+              <h4>Email:</h4> {email}
+            </span>
+          </div>
+        </>
+      )}
     </div>
   );
 }

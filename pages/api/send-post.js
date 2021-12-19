@@ -1,7 +1,8 @@
 const handler = async (req, res) => {
-  const { images, title, text } = req.body;
+  const { images, title, text, owner } = req.body;
   const post = {
     title,
+    owner,
     text,
     images,
   };
