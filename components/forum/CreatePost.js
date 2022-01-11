@@ -8,7 +8,7 @@ export default function CreatePost() {
   const userCtx = useContext(AuthContext);
   const titleRef = useRef();
   const textRef = useRef();
-  const { userId } = userCtx.user;
+  const { userId, isLoggedIn } = userCtx.user;
   const { image, setUploadFile } = useUploadImage();
 
   const addPostHandler = (params) => {
@@ -47,7 +47,7 @@ export default function CreatePost() {
         <>
           <div onClick={addPostHandler} className={Style.backDrop}></div>
           <div className={Style.createPost}>
-            <form onSubmit={saveChangeHandler}>
+            <form className={Style.formPost} onSubmit={saveChangeHandler}>
               <input
                 ref={titleRef}
                 type="text"

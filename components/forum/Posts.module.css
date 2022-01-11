@@ -54,7 +54,13 @@
   font-weight: 700;
   text-align: center;
 }
+.preViewImages {
+  font-size: xx-large;
+  font-weight: bolder;
+  margin: 1rem;
+}
 .preViewImages img {
+  margin: 0 1rem;
   width: 15rem;
   height: 15rem;
 }

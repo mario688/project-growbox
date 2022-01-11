@@ -31,7 +31,7 @@ a {
   box-sizing: border-box;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
   border: none;
   background-color: rgb(255, 255, 255);

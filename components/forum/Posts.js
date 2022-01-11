@@ -12,6 +12,8 @@ export default function Posts(props) {
         <img key={picture} src={post.images[picture]} alt="Post Pic" />
       );
     }
+    const moreImages = images.length > 2;
+    const imagesPreview = images.slice(0, 2);
     PostsForDisplay.push(
       <div className={Style.singlePost} key={key}>
         <div className={Style.ownerPost}>
@@ -33,7 +35,10 @@ export default function Posts(props) {
         <div className={Style.postContent}>
           <div className={Style.postTitle}>{post.title}</div>
           <div>{post.text}</div>
-          <div className={Style.preViewImages}>{images}</div>
+          <div className={Style.preViewImages}>
+            {imagesPreview}
+            {moreImages && "..."}
+          </div>
         </div>
       </div>
     );
