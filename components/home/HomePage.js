@@ -6,25 +6,36 @@ export default function HomePage() {
     <div className={Style.HomePage}>
       <div className={Style.flexContainer}>
         <div className={Style.InfoBox}>
-          <h1 className={Style.InfoBoxTitle}>Fully automatic GrowBox</h1>
-          <h2>monitor and control your device from all over the world</h2>
+          <h1 className={Style.InfoBoxTitle}>W pełni automatyczny GrowBox</h1>
+          <h2>Dzięki aplikacji możesz w łatwy sposób :</h2>
+          <ul>
+            <li>
+              <h3>Monitorować warunki panujące wewnątrz</h3>
+            </li>
+            <li>
+              <h3>Kontrolować wilgotność gleby</h3>
+            </li>
+            <li>
+              <h3>Kontrolować naświetlanie oraz wentylację </h3>
+            </li>
+          </ul>
         </div>
         <div className={Style.imageGrowBox}></div>
       </div>
       <div className={Style.infoBar}>
-        <h1>How it works</h1>
+        <h1>Jak to działa</h1>
         <div className={Style.infoBarItems}>
           <div>
             <div className={`${Style.infoBarItem} ${Style.plant}`}></div>
-            <h3>Plant</h3>
+            <h3>Zasadź</h3>
           </div>
           <div>
             <div className={`${Style.infoBarItem} ${Style.phone}`}></div>
-            <h3>Monitor &amp; controll</h3>
+            <h3>Monitoruj &amp; kontroluj</h3>
           </div>
           <div>
             <div className={`${Style.infoBarItem} ${Style.harvest}`}></div>
-            <h3>harvest</h3>
+            <h3>zbieraj plony</h3>
           </div>
         </div>
       </div>
@@ -40,10 +51,10 @@ export default function HomePage() {
           ></video>
         </div>
         <div className={Style.videoText}>
-          <h1>amazing convenience</h1>
+          <h1>niesamowita wygoda</h1>
           <h2>
-            A home device for growing any type of plant, now you do not have to
-            worry that you will not meet the requirements of the plant.
+            Domowe urządzenie do uprawy każdego rodzaju roślin, teraz nie musisz
+            się martwić, że nie spełnisz wymagań rośliny.
           </h2>
         </div>
       </div>
@@ -51,21 +62,21 @@ export default function HomePage() {
         <div className={Style.specTitle}>
           <div className={Style.specTitleIMG}></div>
           <div className={Style.spec}>
-            <h1>Specyfication</h1>
+            <h1>Specyfikacje</h1>
           </div>
         </div>
         <div className={Style.growSpecContainer}>
           <div className={Style.growSpecImg}></div>
           <div className={Style.growSpec}>
-            <h1>Sensors</h1>
+            <h1>Sensory</h1>
             <ul>
-              <li>AIR TEMPERATURE</li>
-              <li>AIR HUMIDITY</li>
-              <li>CARBON DIOXIDE</li>
-              <li>VOLATILE ORGANIC COMPOUNDS</li>
-              <li>SOIL MOISTURE</li>
-              <li>BRIGHTNESS</li>
-              <li>WATER TANK LEVEL</li>
+              <li>TEMPERATURA POWIETRZA</li>
+              <li>WILGOTNOŚĆ POWIETRZA</li>
+              <li>DWUTLENEK WĘGLA</li>
+              <li>ZWIĄZKI ORGANICZNE</li>
+              <li>WILGOTNOŚĆ GLEBY</li>
+              <li>JASNOŚĆ OTOCZENIA</li>
+              <li>POZIOM WODY W ZBIORNIKU</li>
             </ul>
           </div>
         </div>

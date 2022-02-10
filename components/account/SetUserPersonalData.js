@@ -11,7 +11,6 @@ export default function SetUserPersonalData(props) {
   const lastRef = useRef();
 
   const AvatarHandler = (e) => {
-    console.log();
     setUploadFile({ type: "avatars", files: e.target.files, user: userId });
   };
 

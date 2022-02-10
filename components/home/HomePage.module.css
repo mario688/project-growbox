@@ -4,26 +4,24 @@
 .flexContainer {
   display: flex;
   height: 35rem;
-  justify-content: space-around;
-  background-color: rgb(255, 255, 255);
+  justify-content: center;
 }
 .InfoBox {
-  background-image: url(../../src/theplantman-plant.png);
-  background-position: right 100%;
-  background-repeat: no-repeat;
+  padding: 0 1rem;
+  font-size: x-large;
 }
 .InfoBoxTitle {
-  font-size: 2.5rem;
+  margin: 0;
+  font-size: 3.5rem;
   color: coral;
 }
 .imageGrowBox {
-  width: 55rem;
-  background-color: rgb(158, 36, 111);
-  background-size: 200%;
-  background-position: 50% 2%;
+  width: 35rem;
+  background-image: url(../../src/apka.png);
+  background-size: 58%;
+  background-position-x: center;
+
   background-repeat: no-repeat;
-  background-color: rgb(255, 255, 255);
-  background-image: url(../../src/growbox1.png);
 }
 .infoBar {
   text-align: center;

@@ -33,7 +33,7 @@ const FetchDevice = (data) => {
       {!idDevice && !isLoading && (
         <div className={Style.registerContainer}>
           <div>
-            <h1>not found device for your account </h1>
+            <h1>Nie znaleziono urządzenia dla twojego konta </h1>
           </div>
           <div>
             <RegisterDevice userId={data.userId} />

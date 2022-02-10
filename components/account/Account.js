@@ -15,22 +15,12 @@ export default function Account() {
   return (
     <div className={Style.accountContainer}>
       <div className={Style.account}>
-        <h1>Account</h1>
-
+        <div className={Style.editButton} onClick={showEditMenuHandler}></div>
         <UserPersonalData />
-        <button onClick={showEditMenuHandler}>Edit account</button>
 
         {editAccount && (
           <SetUserPersonalData onClickHandler={showEditMenuHandler} />
         )}
-
-        <button
-          onClick={() => {
-            AuthCtx.logout();
-          }}
-        >
-          Logout
-        </button>
       </div>
     </div>
   );

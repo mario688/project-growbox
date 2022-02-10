@@ -9,7 +9,7 @@ export default function Device() {
 
   return (
     <div className={Style.container}>
-      <h1>Your Device</h1>
+      <h1>Twoje urządzenie</h1>
       <FetchDevice userId={userId} />
     </div>
   );

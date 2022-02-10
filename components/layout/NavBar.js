@@ -17,27 +17,40 @@ export default function NavBar() {
       <div className={Style.navbar}>
         <div onClick={hamburgerHandler} className={Style.hamburgerIcon}></div>
         <div className={Style.homeButton}>
-          <Link href="/">Home</Link>
+          <Link href="/">home</Link>
         </div>
 
         <nav className={Style.navbarItems}>
           <ul>
             <li className={Style.navbarItem}>
-              <Link href="/forum">Foto Relation</Link>
+              <Link href="/forum">foto relacja</Link>
             </li>
             {!isLoggedIn && (
               <li className={Style.navbarItem}>
-                <Link href="/auth">Login</Link>
+                <Link href="/auth">zaloguj</Link>
               </li>
             )}
             {isLoggedIn && (
               <li className={Style.navbarItem}>
-                <Link href="/device">Device</Link>
+                <Link href="/device">urządzenie</Link>
               </li>
             )}
             {isLoggedIn && (
-              <li className={Style.navbarItem}>
-                <Link href="/account">Account</Link>
+              <li className={`${Style.navbarItem} ${Style.accountButton} `}>
+                <Link href="/account">konto</Link>
+                <ul className={Style.dropmenu}>
+                  <li className={Style.dropmenuItem}>
+                    <Link href="/account">Ustawienia konta</Link>
+                  </li>
+                  <li
+                    className={Style.dropmenuItem}
+                    onClick={() => {
+                      AuthCtx.logout();
+                    }}
+                  >
+                    wyloguj
+                  </li>
+                </ul>
               </li>
             )}
           </ul>

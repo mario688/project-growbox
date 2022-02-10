@@ -27,14 +27,14 @@ export default function RegisterDevice(data) {
   return (
     <div>
       <form onSubmit={registerDeviceHandler} className={Style.form}>
-        <h3>Register your device</h3>
+        <h3>Zarejestruj swoje urządzenie</h3>
 
         <input
           onChange={inputTextHandler}
           ref={idDeviceRef}
           type="text"
         ></input>
-        <button disabled={!isValid}>Register</button>
+        <button disabled={!isValid}>Zarejestruj</button>
       </form>
     </div>
   );

@@ -1,48 +1,38 @@
 import React from "react";
-import useUserData from "../hooks/fetchUserPersonals-hook";
+import { useRouter } from "next/router";
 import Style from "./Posts.module.css";
-export default function Posts(props) {
-  const PostsForDisplay = [];
-  for (let key in props.postsList) {
-    let post = props.postsList[key];
-    const { avatar, bio, username, isLoading } = useUserData(post.owner);
-    let images = [];
-    for (let picture in post.images) {
-      images.push(
-        <img key={picture} src={post.images[picture]} alt="Post Pic" />
-      );
-    }
-    const moreImages = images.length > 2;
-    const imagesPreview = images.slice(0, 2);
-    PostsForDisplay.push(
-      <div className={Style.singlePost} key={key}>
-        <div className={Style.ownerPost}>
-          <div>
-            <h2>{username}</h2>
-          </div>
-          <div className={Style.ownerPostAvatar}>
-            <img src={avatar} alt="avatar" />
-          </div>
-          <div className={Style.barInfo}>
-            <div className={`${Style.barInfoItem} ${Style.amountOfPhotos}`}>
-              {images.length}
-            </div>
-            <div className={`${Style.barInfoItem} ${Style.amountOfComments}`}>
-              0
-            </div>
-          </div>
+import useUserData from "../hooks/fetchUserPersonals-hook";
+import PostDetails from "./PostDetails";
+export default function Posts({ title, images, owner, text, id }) {
+  const { avatar, bio, username, isLoading } = useUserData(owner);
+  const router = useRouter();
+  const photos = images.map((photo) => {
+    return <img key={photo} src={photo} alt="photo" />;
+  });
+  const showDetailsHandler = (params) => {
+    router.push("/forum/" + id);
+  };
+
+  return (
+    <div className={Style.singlePost} key={id} onClick={showDetailsHandler}>
+      <div className={Style.ownerPost}>
+        <div>
+          <h2>{username}</h2>
         </div>
-        <div className={Style.postContent}>
-          <div className={Style.postTitle}>{post.title}</div>
-          <div>{post.text}</div>
-          <div className={Style.preViewImages}>
-            {imagesPreview}
-            {moreImages && "..."}
+        <div className={Style.ownerPostAvatar}>
+          <img src={avatar} alt="avatar" />
+        </div>
+        <div className={Style.barInfo}>
+          <div className={`${Style.barInfoItem} ${Style.amountOfPhotos}`}>
+            {images.length}
           </div>
         </div>
       </div>
-    );
-  }
-
-  return <>{PostsForDisplay}</>;
+      <div className={Style.postContent}>
+        <div className={Style.postTitle}>{title}</div>
+        <div>{text}</div>
+        <div className={Style.preViewImages}>{photos.slice(0, 2)}</div>
+      </div>
+    </div>
+  );
 }

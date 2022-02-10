@@ -1,11 +1,24 @@
 .accountContainer {
   height: 95%;
+  position: relative;
   background-image: url(../../src/background.jpg);
   background-repeat: repeat-x;
   background-position: 0% 100%;
   background-attachment: fixed;
 }
-
+.editButton {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-image: url("../../src/edit.png");
+}
 .account {
-  background-color: rgba(203, 248, 213, 0.493);
+  width: 50%;
+  padding: 0.5rem;
+  position: relative;
+  background-color: rgba(216, 233, 227, 0.733);
+  border-radius: 5px;
 }

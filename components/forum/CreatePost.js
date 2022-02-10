@@ -66,7 +66,7 @@ export default function CreatePost() {
           </div>
         </>
       ) : (
-        <button onClick={addPostHandler}>Add photo relation</button>
+        <button onClick={addPostHandler}>Dodaj fotorelacje</button>
       )}
     </div>
   );

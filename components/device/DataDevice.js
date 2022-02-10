@@ -2,11 +2,11 @@ import React from "react";
 import Style from "./DataDevice.module.css";
 export default function dataDevice({ data }) {
   const units = [
-    { temperature: "C°" },
-    { Humitity: "%" },
-    { Brightness: "lux" },
-    { "Soil Mousture": "%" },
-    { water: "%" },
+    { temperatura: "C°" },
+    { wilgotność: "%" },
+    { jasność: "lux" },
+    { "wilgotność gleby": "%" },
+    { "poziom wody": "%" },
     { CO2: "ppm" },
     { etvoc: "ppm" },
   ];

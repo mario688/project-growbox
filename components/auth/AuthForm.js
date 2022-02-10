@@ -40,19 +40,19 @@ const AuthForm = (params) => {
   return (
     <>
       <form onSubmit={submitHandler} className={Style.form}>
-        <h1>{isLogin ? "Login" : "Sing up"}</h1>
+        <h1>{isLogin ? "Login" : "Zarejestruj się"}</h1>
         <label>Email</label>
         <input type="email" ref={enteredEmail} />
-        <label>Haslo</label>
+        <label>Hasło</label>
         <input type="password" ref={enteredPass} />
-        <button type="submit">{isLogin ? "Login" : "Create Account"}</button>
+        <button type="submit">{isLogin ? "Zaloguj" : "Stwórz konto"}</button>
         <button
           type="button"
           onClick={() => {
             setIsLogin((prevState) => !prevState);
           }}
         >
-          {!isLogin ? "Sing in" : "Sing up"}
+          {!isLogin ? "Zaloguj" : "Zarejestruj się"}
         </button>
       </form>
     </>
