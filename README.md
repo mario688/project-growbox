@@ -10,14 +10,29 @@
 
 ## Authentication:
 - Możliwość rejestracji i logowania 
-- Mozliwość rejestracji urządzeniu
+- Możliwość rejestracji urządzenia
 
 
 
 ## Screens: 
+Strona główna
+![Panel Kontrolny](./screens/image0.png)
 
-Po zarejestrowaniu urządzenia ukazuje się panel z wartościamy zczytanymi przez urządzenie.
+Co 30 sekund automatycznie odświeżane są wartości z czujników urządzenia.
+![Panel Kontrolny](./screens/panel.png)
 
 
-![Panel Kontrolny](./screens/image2.png)
+Strona do dodawania fotorelacji
+![Panel Kontrolny](./screens/image.png)
 
+
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
